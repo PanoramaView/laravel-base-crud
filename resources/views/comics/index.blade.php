@@ -6,7 +6,7 @@
 @section('content')
 
 <a href="{{ route('comics.create') }}">Aggiungi comic</a>
-
+@dump($comics)
 <h3>INDEX</h3>
 <table>
     <thead>
@@ -35,8 +35,9 @@
             <td>
                 <a href="{{ route('comics.edit', ['comic' => $comic -> id]) }}"> Modifica comic </a>
             </td>
-
-            @include('partials.components.deleteBtn', ["id" => $comic -> id])
+            <td>
+                @include('partials.components.deleteBtn', ["id" => $comic -> id])
+            </td>
         </tr>
         @endforeach
     </tbody>

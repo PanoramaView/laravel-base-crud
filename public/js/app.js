@@ -19380,6 +19380,21 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+window.addEventListener("load", function () {
+  var deleteForm = document.querySelectorAll(".delete_form");
+  deleteForm.forEach(function (form) {
+    form.addEventListener("submit", function (event) {
+      var resp = confirm("Are you sure you want to delete this comic?");
+
+      if (!resp) {
+        event.preventDefault();
+      } else {
+        alert("Deleted.");
+      }
+    });
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

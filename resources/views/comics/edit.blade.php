@@ -7,7 +7,7 @@
 
 <a href="{{ route('comics.index') }}">Torna alla home</a>
 
-@dump('comics')
+
 <h3>EDIT</h3>
 <form action="{{route('comics.update', $comic->id)}}" method="post">
 @csrf

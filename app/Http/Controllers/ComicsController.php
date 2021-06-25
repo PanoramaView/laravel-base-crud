@@ -110,6 +110,10 @@ class ComicsController extends Controller
         $comic = Comic::findOrFail($id); // se non trova fa un abort(404)
         $formData = $request->all();
 
+        $request->validate([
+            'title'=> 'required'
+        ]);
+
         $comic -> update($formData);
 
         return redirect()->route('comics.show', $comic->id);
