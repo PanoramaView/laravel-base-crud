@@ -30,6 +30,12 @@ Route::post("/comics", "ComicsController@store")->name("comics.store");
 //form per creare nuovo Comics
 Route::get('/comics/create', 'ComicsController@create')->name('comics.create');
 //mostra i dettagli di un comic
-Route::get('/comics/{xComics}', 'ComicsController@show')->name('comics.show');
+Route::get('/comics/{comic}', 'ComicsController@show')->name('comics.show');
+//salva i dati a db di un comic esistente
+Route::match(["PUT", "PATCH"], '/comics/{comic}', 'ComicsController@update')->name('comics.update');
+//deleta i dati a db di un comic esistente
+Route::delete('/comics/{comic}', 'ComicsController@destroy')->name('comics.destroy');
+//mostra il form per modificare un comic
+Route::get('/comics/{xcomic}/edit', 'ComicsController@edit')->name('comics.edit');
 
 //Route::resource("/comics", "ComicsController");

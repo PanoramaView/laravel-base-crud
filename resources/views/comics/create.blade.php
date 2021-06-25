@@ -5,6 +5,7 @@
 
 @section('content')
 <h3>CREATE</h3>
+<a href="{{ route('comics.index') }}">Torna alla home</a>
 <form action="{{route('comics.store')}}" method="post">
 @csrf
     <label for="title">Title</label>

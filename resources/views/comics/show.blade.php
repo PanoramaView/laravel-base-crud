@@ -5,6 +5,10 @@
 
 @section('content')
 
+<a href="{{ route('comics.index') }}">Torna alla home</a>
+<a href="{{ route('comics.edit', ["comic" => $comic->id]) }}">Modifica</a>
+
+@include('partials.components.deleteBtn', ["id" => $comic->id])
 <h3>SHOW</h3>
 <ul>
     <li>Title: {{$comic->title}}</li>

@@ -1,0 +1,1 @@
+<form action="{{route('comics.destroy', $id)}}" method="post" class="delete_form"></form>
