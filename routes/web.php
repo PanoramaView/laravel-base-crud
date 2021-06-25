@@ -36,6 +36,6 @@ Route::match(["PUT", "PATCH"], '/comics/{comic}', 'ComicsController@update')->na
 //deleta i dati a db di un comic esistente
 Route::delete('/comics/{comic}', 'ComicsController@destroy')->name('comics.destroy');
 //mostra il form per modificare un comic
-Route::get('/comics/{xcomic}/edit', 'ComicsController@edit')->name('comics.edit');
+Route::get('/comics/{comic}/edit', 'ComicsController@edit')->name('comics.edit');
 
 //Route::resource("/comics", "ComicsController");

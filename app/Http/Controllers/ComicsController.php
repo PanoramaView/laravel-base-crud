@@ -16,7 +16,7 @@ class ComicsController extends Controller
      */
     public function index()
     {
-        $comics = Comic::orderBy("id", "DESC")->get();
+        $comics = Comic::orderBy("id", "ASC")->get();
 
         return view('comics.index',[
             "comics" => $comics
@@ -87,14 +87,14 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comic $xcomic)
+    public function edit(Comic $comic)
     {
-        if(is_null($xcomic)){
+        if(is_null($comic)){
             abort(404);
         }
 
         return view ("comics.edit",[
-            "comic" => $xcomic
+            "comic" => $comic
         ]);
     }
 
