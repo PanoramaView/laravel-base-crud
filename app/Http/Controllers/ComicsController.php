@@ -44,8 +44,8 @@ class ComicsController extends Controller
         $newComicData = $request->all();
 
         $newComic = new Comic();
-        $newComic -> name = $newComicData['name'];
-        $newComic -> email = $newComicData['email'];
+        // $newComic -> name = $newComicData['name'];
+        // $newComic -> email = $newComicData['email'];
         $newComic->fill($newComicData);
         $newComic -> save();
 

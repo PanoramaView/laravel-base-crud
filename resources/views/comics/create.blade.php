@@ -19,9 +19,6 @@
     <label for="price">Price</label>
     <input type="text" placeholder="€0.00" name="price" id="price" >
     
-    <label for="thumb">thumb</label>
-    <input type="text" name="thumb" id="thumb">
-    
     <label for="series">Series</label>
     <input type="text" name="series" id="series">
     

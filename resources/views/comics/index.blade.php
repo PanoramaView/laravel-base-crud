@@ -26,7 +26,7 @@
                 <td>{{$comic->description}}</td>
                 <td>{{$comic->thumb}}</td>
                 <td>{{$comic->price}}</td>
-                <td><a href="{{route('comics.show', $user->id)}}"></a></td>
+                <td><a href="{{route('comics.show', $comic->id)}}"></a></td>
             </tr>
         @endforeach
     </tbody>
