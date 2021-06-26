@@ -43,6 +43,11 @@ class ComicsController extends Controller
     {
         $newComicData = $request->all();
 
+        $request->validate([
+            'title'=> 'required|max:255',
+            'price'=> 'required|numeric|gte:0',
+        ]);
+
         $newComic = new Comic();
         // $newComic -> name = $newComicData['name'];
         // $newComic -> email = $newComicData['email'];
@@ -109,10 +114,6 @@ class ComicsController extends Controller
     {
         $comic = Comic::findOrFail($id); // se non trova fa un abort(404)
         $formData = $request->all();
-
-        $request->validate([
-            'title'=> 'required'
-        ]);
 
         $comic -> update($formData);
 

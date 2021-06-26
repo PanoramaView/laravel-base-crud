@@ -6,6 +6,9 @@
 @section('content')
 <h3>CREATE</h3>
 <a href="{{ route('comics.index') }}">Torna alla home</a>
+
+@include('partials.components.errorsAlert')
+
 <form action="{{route('comics.store')}}" method="post">
 @csrf
     <label for="title">Title</label>
